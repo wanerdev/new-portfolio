@@ -5,7 +5,7 @@ import { remarkReadingTime } from "./remark-reading-time.mjs";
 import node from "@astrojs/node";
 
 // https://astro.build/config
-export default defineConfig({
+/*export default defineConfig({
   integrations: [tailwind(), icon()],
   output: "server",
   adapter: node({
@@ -14,4 +14,14 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
+});*/
+const isProduction = process.env.NODE_ENV === 'production';
+
+// Configuración del sitio y base dependiendo del entorno
+const siteUrl = isProduction ? 'https://wanerdev.github.io' : 'http://localhost:3000';
+const basePath = isProduction ? '/mi-repo/' : '/';
+
+export default defineConfig({
+  site: siteUrl,
+  base: basePath,
 });
