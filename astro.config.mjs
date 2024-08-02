@@ -17,7 +17,7 @@ import node from "@astrojs/node";
 });*/
 const isProduction = process.env.NODE_ENV === 'production';
 
-// Configuración del sitio y base dependiendo del entorno
+// Configuración del sitio y base dependiendo del entorno waner test
 const siteUrl = isProduction ? 'https://wanerdev.github.io' : 'http://localhost:3000';
 const basePath = isProduction ? '/mi-repo/' : '/';
 
